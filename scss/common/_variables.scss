@@ -1,4 +1,3 @@
-
 $breakpoints: (
   xxl: 1920px,
   xl: 1280px,
@@ -7,3 +6,7 @@ $breakpoints: (
   xs: 576px,
 );
 
+$bgAfter: linear-gradient(90deg, #bb00ff, #a7a5a5);
+$bgMain-1: linear-gradient(90deg, #08033b, #0a0a5c);
+$bgMain-2: linear-gradient(90deg, #89b0b6, #4b8790, #31595f);
+$moonFill: linear-gradient(90deg, #ecdd64, #c0c060, #e3dc8d);

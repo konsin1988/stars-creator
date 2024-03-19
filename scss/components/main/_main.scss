@@ -1,0 +1,55 @@
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  @extend %flexCenter;
+}
+
+.heaven {
+  position: absolute;
+  inset: 0;
+  background: $bgMain-1;
+  z-index: 1;
+}
+.heaven::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: bg_heaven 5s linear infinite alternate;
+  background: $bgAfter;
+  z-index: 2;
+}
+.heaven::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  //   animation: bg_heaven 2s linear infinite alternate;
+  //   background: $bgMain-2;
+  z-index: 2;
+}
+
+.moon {
+  position: absolute;
+  inset: 0;
+  svg:first-child {
+    @include moonSvg(25, 20, 1, 6, #f4e570, none, 0.5, 1);
+  }
+  svg:nth-child(2) {
+    @include moonSvg(25, 21, 1.1, 6, #f4e570, none, 60, 0.7);
+  }
+  svg:nth-child(3) {
+    @include moonSvg(28, 25, 2.5, 5, #f4e570, none, 30, 0.5);
+  }
+  svg:nth-child(4) {
+    @include moonSvg(25, 20, 1, 7, none, #fff, 40, 0.5);
+    animation: moonBorder 0.5s linear infinite;
+  }
+  svg:nth-child(5) {
+    @include moonSvg(25, 20, 1, 7, none, #363634, 10, 0.5);
+  }
+  svg:nth-child(6) {
+    @include moonSvg(25, 19.5, 0.97, 7, none, #fff, 10, 0.3);
+  }
+}

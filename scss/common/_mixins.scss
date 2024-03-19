@@ -1,0 +1,20 @@
+@mixin moonSvg(
+  $top,
+  $right,
+  $scale,
+  $zindex,
+  $fillColor,
+  $strokeColor,
+  $blurAmount,
+  $opacity
+) {
+  @extend %moonSvg;
+  top: $top * 1%;
+  right: $right * 1%;
+  transform: rotate(165deg) scale($scale);
+  z-index: $zindex;
+  fill: $fillColor;
+  stroke: $strokeColor;
+  filter: blur($blurAmount * 1px);
+  opacity: $opacity;
+}
