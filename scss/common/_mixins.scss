@@ -18,3 +18,10 @@
   filter: blur($blurAmount * 1px);
   opacity: $opacity;
 }
+
+@mixin starSizeBlur($scaleAmount, $blurAmount, $opacityAmount) {
+  @extend %starsSizePosition;
+  transform: scale($scaleAmount);
+  filter: blur($blurAmount * 1px);
+  opacity: $opacityAmount;
+}

@@ -1,4 +1,4 @@
-body {
+section {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -6,8 +6,7 @@ body {
 }
 
 .heaven {
-  position: absolute;
-  inset: 0;
+  @extend %boxes;
   background: $bgMain-1;
   z-index: 1;
 }
@@ -20,19 +19,8 @@ body {
   background: $bgAfter;
   z-index: 2;
 }
-.heaven::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  //   animation: bg_heaven 2s linear infinite alternate;
-  //   background: $bgMain-2;
-  z-index: 2;
-}
-
 .moon {
-  position: absolute;
-  inset: 0;
+  @extend %boxes;
   svg:first-child {
     @include moonSvg(25, 20, 1, 6, #f4e570, none, 0.5, 1);
   }
@@ -51,5 +39,55 @@ body {
   }
   svg:nth-child(6) {
     @include moonSvg(25, 19.5, 0.97, 7, none, #fff, 10, 0.3);
+  }
+}
+
+.stars-box {
+  @extend %boxes;
+}
+.star {
+  @extend %flexCenter;
+  @include starSizeBlur(1, 0, 1);
+  top: 20%;
+  left: 30%;
+  z-index: 8;
+  fill: #f4e570;
+  svg:nth-child(1) {
+    position: relative;
+    filter: blur(0.5px);
+  }
+  svg:nth-child(2) {
+    @include starSizeBlur(1, 0, 1);
+  }
+  svg:nth-child(3) {
+    @include starSizeBlur(1.5, 2, 0.8);
+  }
+  svg:nth-child(4) {
+    @include starSizeBlur(4, 3, 0.8);
+  }
+}
+
+.starSize_sm {
+  width: $starSize_sm * 1px;
+  height: $starSize_sm * 1px;
+  svg {
+    width: $starSize_sm * 1px;
+    height: $starSize_sm * 1px;
+  }
+}
+.starSize_md {
+  width: $starSize_md * 1px;
+  height: $starSize_md * 1px;
+  svg {
+    width: $starSize_md * 1px;
+    height: $starSize_md * 1px;
+  }
+}
+.starSize_bg {
+  width: $starSize_bg * 1px;
+  height: $starSize_bg * 1px;
+  svg {
+    width: $starSize_bg * 1px;
+    height: $starSize_bg * 1px;
   }
 }
